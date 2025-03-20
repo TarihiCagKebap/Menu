@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restoran Menüsü</title>
+    <title>Tarihi Cağ Kebap Menü</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -24,7 +24,28 @@
             margin: 0;
         }
 
+        .category-buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .category-buttons button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            background-color: #d35400;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .category-buttons button:hover {
+            background-color: #e67e22;
+        }
+
         .menu-category {
+            display: none;
             margin: 30px auto;
             padding: 20px;
             max-width: 900px;
@@ -33,10 +54,14 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .menu-category h2 {
-            text-align: center;
-            color: #d35400;
-            margin-bottom: 20px;
+        .menu-category.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .menu-items {
@@ -53,6 +78,11 @@
             padding: 10px;
             width: 250px;
             text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.05);
         }
 
         .menu-item img {
@@ -75,12 +105,19 @@
 </head>
 <body>
     <header>
-        <h1>Restoran Menüsü</h1>
+        <h1>Tarihi Cağ kebap Menü</h1>
         <p>Lezzetli yemeklerimizle sizi bekliyoruz!</p>
     </header>
 
+    <!-- Kategori Butonları -->
+    <div class="category-buttons">
+        <button onclick="showCategory('anayemekler')">Ana Yemekler</button>
+        <button onclick="showCategory('tatlilar')">Tatlılar</button>
+        <button onclick="showCategory('icecekler')">İçecekler</button>
+    </div>
+
     <!-- Ana Yemekler -->
-    <div class="menu-category">
+    <div id="anayemekler" class="menu-category active">
         <h2>Ana Yemekler</h2>
         <div class="menu-items">
             <div class="menu-item">
@@ -89,31 +126,30 @@
                 <p>Bol acılı ve lezzetli kebap.</p>
                 <p class="price">₺85</p>
             </div>
-
             <div class="menu-item">
                 <img src="çorba.jpg" alt="Çorba">
                 <h3>Çorba</h3>
-                <p>Yoğurt ve tereyağı ile servis edilir.</p>
+                <p>Günün Çorbası</p>
                 <p class="price">₺95</p>
             </div>
         </div>
     </div>
 
     <!-- Tatlılar -->
-    <div class="menu-category">
+    <div id="tatlilar" class="menu-category">
         <h2>Tatlılar</h2>
         <div class="menu-items">
             <div class="menu-item">
                 <img src="şekerpare.jpg" alt="Şekerpare">
                 <h3>Şekerpare</h3>
-                <p>Şerbetli tatlı, peynir dolgulu.</p>
+                <p>Taze yapılmıştır.</p>
                 <p class="price">₺45</p>
             </div>
         </div>
     </div>
 
     <!-- İçecekler -->
-    <div class="menu-category">
+    <div id="icecekler" class="menu-category">
         <h2>İçecekler</h2>
         <div class="menu-items">
             <div class="menu-item">
@@ -124,5 +160,15 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function showCategory(categoryId) {
+            const categories = document.querySelectorAll('.menu-category');
+            categories.forEach(category => category.classList.remove('active'));
+
+            const selectedCategory = document.getElementById(categoryId);
+            selectedCategory.classList.add('active');
+        }
+    </script>
 </body>
 </html>
