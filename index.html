@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restoran Menüsü</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #d35400;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        .menu-item {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .menu-item h3 {
+            margin-bottom: 10px;
+            color: #d35400;
+        }
+
+        .price {
+            color: #333;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Restoran Menüsü</h1>
+        <p>Lezzetli yemeklerimizle sizi bekliyoruz!</p>
+    </header>
+
+    <div class="menu">
+        <div class="menu-item">
+            <h3>Adana Kebap</h3>
+            <p>Bol acılı ve lezzetli kebap.</p>
+            <p class="price">₺85</p>
+        </div>
+
+        <div class="menu-item">
+            <h3>İskender</h3>
+            <p>Yoğurt ve tereyağı ile servis edilir.</p>
+            <p class="price">₺95</p>
+        </div>
+
+        <div class="menu-item">
+            <h3>Çorba</h3>
+            <p>Günün çorbası: Mercimek</p>
+            <p class="price">₺30</p>
+        </div>
+
+        <div class="menu-item">
+            <h3>Künefe</h3>
+            <p>Şerbetli tatlı, peynir dolgulu.</p>
+            <p class="price">₺45</p>
+        </div>
+
+        <div class="menu-item">
+            <h3>Ayran</h3>
+            <p>Serinletici ve ferahlatıcı.</p>
+            <p class="price">₺15</p>
+        </div>
+    </div>
+</body>
+</html>
