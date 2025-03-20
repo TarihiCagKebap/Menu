@@ -6,34 +6,123 @@
     <title>Restoran Menüsü</title>
     <style>
         body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-            background: url('menugorseli.png') no-repeat center center fixed;
-            background-size: cover;
+            background-color: #f4f4f4;
+            color: #333;
         }
 
-        .container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: rgba(255, 255, 255, 0.8); /* Arka planı biraz beyazlatır */
+        header {
+            background-color: #d35400;
+            color: white;
+            padding: 20px;
+            text-align: center;
         }
 
         h1 {
-            color: #d35400;
-            background-color: rgba(255, 255, 255, 0.7);
-            padding: 10px;
+            margin: 0;
+        }
+
+        .menu-category {
+            margin: 30px auto;
+            padding: 20px;
+            max-width: 900px;
+            background-color: white;
             border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-category h2 {
+            text-align: center;
+            color: #d35400;
+            margin-bottom: 20px;
+        }
+
+        .menu-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .menu-item {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 10px;
+            width: 250px;
+            text-align: center;
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .menu-item h3 {
+            margin: 10px 0;
+            color: #d35400;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #333;
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <header>
         <h1>Restoran Menüsü</h1>
+        <p>Lezzetli yemeklerimizle sizi bekliyoruz!</p>
+    </header>
+
+    <!-- Ana Yemekler -->
+    <div class="menu-category">
+        <h2>Ana Yemekler</h2>
+        <div class="menu-items">
+            <div class="menu-item">
+                <img src="kebap.jpg" alt="Cağ Kebap">
+                <h3>Cağ Kebap</h3>
+                <p>Bol acılı ve lezzetli kebap.</p>
+                <p class="price">₺85</p>
+            </div>
+
+            <div class="menu-item">
+                <img src="çorba.jpg" alt="Çorba">
+                <h3>Çorba</h3>
+                <p>Yoğurt ve tereyağı ile servis edilir.</p>
+                <p class="price">₺95</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tatlılar -->
+    <div class="menu-category">
+        <h2>Tatlılar</h2>
+        <div class="menu-items">
+            <div class="menu-item">
+                <img src="şekerpare.jpg" alt="Şekerpare">
+                <h3>Şekerpare</h3>
+                <p>Şerbetli tatlı, peynir dolgulu.</p>
+                <p class="price">₺45</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- İçecekler -->
+    <div class="menu-category">
+        <h2>İçecekler</h2>
+        <div class="menu-items">
+            <div class="menu-item">
+                <img src="ayran.jpg" alt="Ayran">
+                <h3>Ayran</h3>
+                <p>Serinletici ve ferahlatıcı.</p>
+                <p class="price">₺15</p>
+            </div>
+        </div>
     </div>
 </body>
 </html>
